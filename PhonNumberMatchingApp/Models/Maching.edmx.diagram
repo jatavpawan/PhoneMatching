@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ea4b9f5c124144f78103e03c919d2b21" Name="Diagram1" >
+        <EntityTypeShape EntityType="gulam786_HurufModel.AppFile" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="gulam786_HurufModel.UserRegister" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="gulam786_HurufModel.Circle" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="gulam786_HurufModel.NetworkOperator" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="gulam786_HurufModel.LeadCollection" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

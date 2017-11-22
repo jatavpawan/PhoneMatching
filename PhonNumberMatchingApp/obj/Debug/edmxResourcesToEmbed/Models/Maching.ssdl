@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gulam786_HurufModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AppFile">
+    <Key>
+      <PropertyRef Name="AppFileID" />
+    </Key>
+    <Property Name="AppFileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="FileURL" Type="varchar(max)" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="FileType" Type="int" Nullable="false" />
+    <Property Name="FileCategory" Type="int" Nullable="false" />
+    <Property Name="IsDownloaded" Type="bit" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Circle">
+    <Key>
+      <PropertyRef Name="CircleID" />
+    </Key>
+    <Property Name="CircleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CircleName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="Category" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="LeadCollection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="OperatorCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="CircleCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="city" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NetworkOperator">
+    <Key>
+      <PropertyRef Name="NetworkID" />
+    </Key>
+    <Property Name="NetworkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="NetworkName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="UserRegister">
+    <Key>
+      <PropertyRef Name="RegistrationID" />
+    </Key>
+    <Property Name="RegistrationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="150" />
+    <Property Name="LastName" Type="varchar" MaxLength="150" />
+    <Property Name="UserName" Type="varchar" MaxLength="150" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="GCMId" Type="text" />
+    <Property Name="IsNotification" Type="bit" />
+    <Property Name="FileName" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityContainer Name="gulam786_HurufModelStoreContainer">
+    <EntitySet Name="AppFile" EntityType="Self.AppFile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Circle" EntityType="Self.Circle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeadCollection" EntityType="Self.LeadCollection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NetworkOperator" EntityType="Self.NetworkOperator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRegister" EntityType="Self.UserRegister" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

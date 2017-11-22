@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="gulam786_HurufModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AppFile">
+          <Key>
+            <PropertyRef Name="AppFileID" />
+          </Key>
+          <Property Name="AppFileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="FileURL" Type="varchar(max)" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="FileType" Type="int" Nullable="false" />
+          <Property Name="FileCategory" Type="int" Nullable="false" />
+          <Property Name="IsDownloaded" Type="bit" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="Timestamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Circle">
+          <Key>
+            <PropertyRef Name="CircleID" />
+          </Key>
+          <Property Name="CircleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CircleName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="Category" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LeadCollection">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="OperatorCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="CircleCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="city" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="NetworkOperator">
+          <Key>
+            <PropertyRef Name="NetworkID" />
+          </Key>
+          <Property Name="NetworkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="NetworkName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="UserRegister">
+          <Key>
+            <PropertyRef Name="RegistrationID" />
+          </Key>
+          <Property Name="RegistrationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="150" />
+          <Property Name="LastName" Type="varchar" MaxLength="150" />
+          <Property Name="UserName" Type="varchar" MaxLength="150" />
+          <Property Name="Email" Type="varchar" MaxLength="150" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar(max)" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="GCMId" Type="text" />
+          <Property Name="IsNotification" Type="bit" />
+          <Property Name="FileName" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="gulam786_HurufModelStoreContainer">
+          <EntitySet Name="AppFile" EntityType="Self.AppFile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Circle" EntityType="Self.Circle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeadCollection" EntityType="Self.LeadCollection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NetworkOperator" EntityType="Self.NetworkOperator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRegister" EntityType="Self.UserRegister" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gulam786_HurufModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MachingAppEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="AppFile" EntityType="gulam786_HurufModel.AppFile" />
+          <EntitySet Name="UserRegister" EntityType="gulam786_HurufModel.UserRegister" />
+          <EntitySet Name="Circle" EntityType="gulam786_HurufModel.Circle" />
+          <EntitySet Name="NetworkOperator" EntityType="gulam786_HurufModel.NetworkOperator" />
+          <EntitySet Name="LeadCollection" EntityType="gulam786_HurufModel.LeadCollection" />
+        </EntityContainer>
+        <EntityType Name="AppFile">
+          <Key>
+            <PropertyRef Name="AppFileID" />
+          </Key>
+          <Property Name="AppFileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FileURL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FileType" Type="Int32" Nullable="false" />
+          <Property Name="FileCategory" Type="Int32" Nullable="false" />
+          <Property Name="IsDownloaded" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserRegister">
+          <Key>
+            <PropertyRef Name="RegistrationID" />
+          </Key>
+          <Property Name="RegistrationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GCMId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsNotification" Type="Boolean" />
+          <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Circle">
+          <Key>
+            <PropertyRef Name="CircleID" />
+          </Key>
+          <Property Name="CircleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CircleName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NetworkOperator">
+          <Key>
+            <PropertyRef Name="NetworkID" />
+          </Key>
+          <Property Name="NetworkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NetworkName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LeadCollection">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="OperatorCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CircleCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="gulam786_HurufModelStoreContainer" CdmEntityContainer="MachingAppEntities" >
+          <EntitySetMapping Name="AppFile">
+            <EntityTypeMapping TypeName="gulam786_HurufModel.AppFile">
+              <MappingFragment StoreEntitySet="AppFile">
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+                <ScalarProperty Name="FileCategory" ColumnName="FileCategory" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="AppFileID" ColumnName="AppFileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRegister">
+            <EntityTypeMapping TypeName="gulam786_HurufModel.UserRegister">
+              <MappingFragment StoreEntitySet="UserRegister">
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="IsNotification" ColumnName="IsNotification" />
+                <ScalarProperty Name="GCMId" ColumnName="GCMId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Circle">
+            <EntityTypeMapping TypeName="gulam786_HurufModel.Circle">
+              <MappingFragment StoreEntitySet="Circle">
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CircleName" ColumnName="CircleName" />
+                <ScalarProperty Name="CircleID" ColumnName="CircleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NetworkOperator">
+            <EntityTypeMapping TypeName="gulam786_HurufModel.NetworkOperator">
+              <MappingFragment StoreEntitySet="NetworkOperator">
+                <ScalarProperty Name="NetworkName" ColumnName="NetworkName" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="NetworkID" ColumnName="NetworkID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeadCollection">
+            <EntityTypeMapping TypeName="gulam786_HurufModel.LeadCollection">
+              <MappingFragment StoreEntitySet="LeadCollection">
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CircleCode" ColumnName="CircleCode" />
+                <ScalarProperty Name="OperatorCode" ColumnName="OperatorCode" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

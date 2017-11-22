@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gulam786_HurufModelStoreContainer" CdmEntityContainer="MachingAppEntities">
+    <EntitySetMapping Name="AppFile">
+      <EntityTypeMapping TypeName="gulam786_HurufModel.AppFile">
+        <MappingFragment StoreEntitySet="AppFile">
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+          <ScalarProperty Name="FileCategory" ColumnName="FileCategory" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="AppFileID" ColumnName="AppFileID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRegister">
+      <EntityTypeMapping TypeName="gulam786_HurufModel.UserRegister">
+        <MappingFragment StoreEntitySet="UserRegister">
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="IsNotification" ColumnName="IsNotification" />
+          <ScalarProperty Name="GCMId" ColumnName="GCMId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Circle">
+      <EntityTypeMapping TypeName="gulam786_HurufModel.Circle">
+        <MappingFragment StoreEntitySet="Circle">
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CircleName" ColumnName="CircleName" />
+          <ScalarProperty Name="CircleID" ColumnName="CircleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NetworkOperator">
+      <EntityTypeMapping TypeName="gulam786_HurufModel.NetworkOperator">
+        <MappingFragment StoreEntitySet="NetworkOperator">
+          <ScalarProperty Name="NetworkName" ColumnName="NetworkName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="NetworkID" ColumnName="NetworkID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeadCollection">
+      <EntityTypeMapping TypeName="gulam786_HurufModel.LeadCollection">
+        <MappingFragment StoreEntitySet="LeadCollection">
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CircleCode" ColumnName="CircleCode" />
+          <ScalarProperty Name="OperatorCode" ColumnName="OperatorCode" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
