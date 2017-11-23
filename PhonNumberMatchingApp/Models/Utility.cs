@@ -54,14 +54,14 @@ namespace PhonNumberMatchingApp.Models
         public List<PhoneData> FetchPhoneNumberData(string strFilePath)
         {
             List<PhoneCode> arr = new List<PhoneCode>();
-
+  StringBuilder cods = new StringBuilder();
             using (StreamReader sr = new StreamReader(strFilePath))
             {
-
+              
                 while (!sr.EndOfStream)
                 {
                     string rows = sr.ReadLine();
-
+                    cods.Append(rows.Substring(0, 4) + ",");
                     arr.Add(new PhoneCode {PhoneNumber= rows, Code=rows.Substring(0,4)});
                     //arr
 

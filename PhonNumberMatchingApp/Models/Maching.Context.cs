@@ -12,6 +12,8 @@ namespace PhonNumberMatchingApp.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class MachingAppEntities : DbContext
     {
@@ -30,5 +32,14 @@ namespace PhonNumberMatchingApp.Models
         public virtual DbSet<Circle> Circle { get; set; }
         public virtual DbSet<NetworkOperator> NetworkOperator { get; set; }
         public virtual DbSet<LeadCollection> LeadCollection { get; set; }
+    
+        public virtual int GetPhoneNumberData(string phonenumber)
+        {
+            var phonenumberParameter = phonenumber != null ?
+                new ObjectParameter("phonenumber", phonenumber) :
+                new ObjectParameter("phonenumber", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GetPhoneNumberData", phonenumberParameter);
+        }
     }
 }

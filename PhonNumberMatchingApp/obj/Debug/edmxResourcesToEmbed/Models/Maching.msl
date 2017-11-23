@@ -67,5 +67,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetPhoneNumberData" FunctionName="gulam786_HurufModel.Store.GetPhoneNumberData" />
   </EntityContainerMapping>
 </Mapping>

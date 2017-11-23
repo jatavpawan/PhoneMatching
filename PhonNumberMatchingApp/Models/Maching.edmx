@@ -66,6 +66,9 @@
           <Property Name="IsNotification" Type="bit" />
           <Property Name="FileName" Type="varchar" MaxLength="500" />
         </EntityType>
+        <Function Name="GetPhoneNumberData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="huruf786">
+          <Parameter Name="phonenumber" Type="text" Mode="In" />
+        </Function>
         <EntityContainer Name="gulam786_HurufModelStoreContainer">
           <EntitySet Name="AppFile" EntityType="Self.AppFile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Circle" EntityType="Self.Circle" Schema="dbo" store:Type="Tables" />
@@ -83,6 +86,9 @@
           <EntitySet Name="Circle" EntityType="gulam786_HurufModel.Circle" />
           <EntitySet Name="NetworkOperator" EntityType="gulam786_HurufModel.NetworkOperator" />
           <EntitySet Name="LeadCollection" EntityType="gulam786_HurufModel.LeadCollection" />
+          <FunctionImport Name="GetPhoneNumberData">
+            <Parameter Name="phonenumber" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="AppFile">
           <Key>
@@ -217,6 +223,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetPhoneNumberData" FunctionName="gulam786_HurufModel.Store.GetPhoneNumberData" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

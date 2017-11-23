@@ -6,6 +6,9 @@
     <EntitySet Name="Circle" EntityType="gulam786_HurufModel.Circle" />
     <EntitySet Name="NetworkOperator" EntityType="gulam786_HurufModel.NetworkOperator" />
     <EntitySet Name="LeadCollection" EntityType="gulam786_HurufModel.LeadCollection" />
+    <FunctionImport Name="GetPhoneNumberData">
+      <Parameter Name="phonenumber" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="AppFile">
     <Key>

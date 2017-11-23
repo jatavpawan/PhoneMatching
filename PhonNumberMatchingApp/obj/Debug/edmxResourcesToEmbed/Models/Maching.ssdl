@@ -61,6 +61,9 @@
     <Property Name="IsNotification" Type="bit" />
     <Property Name="FileName" Type="varchar" MaxLength="500" />
   </EntityType>
+  <Function Name="GetPhoneNumberData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="huruf786">
+    <Parameter Name="phonenumber" Type="text" Mode="In" />
+  </Function>
   <EntityContainer Name="gulam786_HurufModelStoreContainer">
     <EntitySet Name="AppFile" EntityType="Self.AppFile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Circle" EntityType="Self.Circle" Schema="dbo" store:Type="Tables" />
